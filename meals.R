@@ -7,7 +7,7 @@ meals <- read_excel("../meals.xlsx", sheet="meals") %>%
                             timing_min <= 35 ~ "medium",
                             TRUE ~ "long"))
 
-ingredients <- read_excel("../meals.xlsx", sheet="ingredients") %>% 
+ingredients <- read_excel("meals.xlsx", sheet="ingredients") %>% 
   mutate(units = replace_na(units, ""))
 
 check_sample <- function(sample, check_params) {
