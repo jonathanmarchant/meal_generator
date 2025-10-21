@@ -1,7 +1,7 @@
 library(readxl)
 library(tidyverse)
 
-meals <- read_excel("../meals.xlsx", sheet="meals") %>% 
+meals <- read_excel("meals.xlsx", sheet="meals") %>% 
   mutate(length = case_when(prepped_in_5 == "Y" ~ "prepped",
                             timing_min <= 15 ~ "short",
                             timing_min <= 35 ~ "medium",
